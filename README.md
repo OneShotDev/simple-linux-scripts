@@ -10,8 +10,8 @@ The scripts are tested on a Debian 9.4 'stretch' system with a 4.9.0 kernel.
 
 
 ## Content:
-* `ipv6-disable.sh`: Disable your IPv6 connectivity directly in your grub boot loader. (e.g. to prevent IPv6 leaks while using a VPN service)
-* `ipv6-enable.sh`: Enable your IPv6 connectivity directly in your grub boot loader.
+* [`ipv6-disable.sh`](scripts/ipv6-disable.sh): Disable your IPv6 connectivity directly in your grub boot loader. (e.g. to prevent IPv6 leaks while using a VPN service)
+* [`ipv6-enable.sh`](scripts/ipv6-enable.sh): Enable your IPv6 connectivity directly in your grub boot loader.
 
 _more to come in the future_
 
