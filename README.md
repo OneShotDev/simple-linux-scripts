@@ -24,8 +24,7 @@ _Disable your IPv6 connectivity directly in your grub boot loader. (e.g. to prev
 **Prerequisites:**
 * Your system needs to use [grub](https://wiki.debian.org/Grub) as its boot loader
 
-**Run it as:**
-* ROOT user
+**Run it as:** ROOT user
 
 **How does it work:**
 It changes some lines in the configuration file `/etc/default/grub`, updates the boot loader and **REBOOTS YOUR SYSTEM** for the changes to take effect.
@@ -40,8 +39,7 @@ _Enable your IPv6 connectivity directly in your grub boot loader._
 **Prerequisites:**
 * Your system needs to use [grub](https://wiki.debian.org/Grub) as its boot loader
 
-**Run it as:**
-* ROOT user
+**Run it as:** ROOT user
 
 **How does it work:**
 It changes some lines in the configuration file `/etc/default/grub`, updates the boot loader and **REBOOTS YOUR SYSTEM** for the changes to take effect.
