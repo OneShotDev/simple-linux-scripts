@@ -58,7 +58,7 @@ _Make a reliable backup of a folder/partition of your choice._
 **Run it as:** ROOT user
 
 **How does it work:**
-Specify the directory of your data (`DATA_DIR`), your backup destination (`BACKUP_DIR`), the folder that preserves deleted files (`DEL_FILES_DIR`) and a folder for the generated log files (`LOG_FILES_DIR`) in the _SETTINGS_ part of the script.
+Specify the directory of your data ([`DATA_DIR`](https://github.com/OneShotDev/simple-linux-scripts/blob/9809109824ac7339b9d83a141bc9fe2aa8863983/scripts/data-backup.sh#L5)), your backup destination ([`BACKUP_DIR`](https://github.com/OneShotDev/simple-linux-scripts/blob/9809109824ac7339b9d83a141bc9fe2aa8863983/scripts/data-backup.sh#L6)), the folder that preserves deleted files ([`DEL_FILES_DIR`](https://github.com/OneShotDev/simple-linux-scripts/blob/9809109824ac7339b9d83a141bc9fe2aa8863983/scripts/data-backup.sh#L7)) and a folder for the generated log files ([`LOG_FILES_DIR`](https://github.com/OneShotDev/simple-linux-scripts/blob/9809109824ac7339b9d83a141bc9fe2aa8863983/scripts/data-backup.sh#L8)) in the _SETTINGS_ part of the script.
 Run it and follow the instructions on screen.
 
 **Additional comments:**
