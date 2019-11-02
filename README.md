@@ -13,6 +13,7 @@ The scripts are tested on a Debian 9.4 'stretch' system with a 4.9.0 kernel.
 * [`ipv6-disable.sh`](https://github.com/OneShotDev/simple-linux-scripts#ipv6-disablesh): Disable your IPv6 connectivity directly in your grub boot loader. (e.g. to prevent IPv6 leaks while using a VPN service)
 * [`ipv6-enable.sh`](https://github.com/OneShotDev/simple-linux-scripts#ipv6-enablesh): Enable your IPv6 connectivity directly in your grub boot loader.
 * [`data-backup.sh`](https://github.com/OneShotDev/simple-linux-scripts#data-backupsh): Make a reliable backup of a folder/partition of your choice.
+* [`safe-shutdown.sh`](https://github.com/OneShotDev/simple-linux-scripts#safe-shutdownsh): Shuts down your machine after entering a special arrow key stroke.
 
 _more to come in the future_
 
@@ -68,3 +69,26 @@ When doing a backup, the script checks if the number of files found in `DATA_DIR
 If it isn't the first time you run a backup, you almost certainly will get the warning that not all files were copied which is ok, since the script only copies new files and files that have changed since the last backup.
 
 If a file in the `DATA_DIR` was deleted since the last backup, it will be removed from `BACKUP_DIR` to maintain an exact copy. Deleted files however will be stored in the directory specified by `DEL_FILES_DIR`. Make sure to clean up this directory from time to time to save disk space.
+
+### [`safe-shutdown.sh`](scripts/safe-shutdown.sh)
+_Shuts down your machine after entering a special arrow key stroke._
+
+**Prerequisites:**
+_None_
+
+**Run it as:** ROOT user (or as user in sudoers file)
+
+**How does it work:**
+Gives you a few seconds to enter a correct pattern of four arrow keys. If you enter the right combination, your device shuts down after 5 seconds. The correct standard pattern is `UP_ARROW` (↑), `DOWN_ARROW` (↓), `LEFT_ARROW` (←), `DOWN_ARROW` (↓).
+
+You can change the order of arrow keys to press as you wish in the _SETTINGS_ part of the script. 
+Simply set the variables `key1`-`key4` to the letters in the order of your choice.
+
+The key codes are:
+`UP_ARROW=A`, `DOWN_ARROW=B`, `LEFT_ARROW=C`, `RIGHT_ARROW=D`.
+
+You can cancel the shutdown at any point by canceling the script with the shortcut `Ctrl+C`.
+
+**Additional comments:**
+The idea of this script is to bind it to a shortcut on your keyboard. If the script would just shut down your computer upon executing, you may accidentally power off which can be quite frustrating (believe me).
+Since you need to enter a special pattern of keys and get an additional delay of 5 seconds, you can always make sure to only shut down your device when you REALLY want to do so. When using it on a regular base, you should be soon familiar with your arrow key pattern and shutting down your computer is safe AND fast.
