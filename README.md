@@ -12,6 +12,7 @@ The scripts are tested on a Debian 9.4 'stretch' system with a 4.9.0 kernel.
 ## Content:
 * [`ipv6-disable.sh`](https://github.com/OneShotDev/simple-linux-scripts#ipv6-disablesh): Disable your IPv6 connectivity directly in your grub boot loader. (e.g. to prevent IPv6 leaks while using a VPN service)
 * [`ipv6-enable.sh`](https://github.com/OneShotDev/simple-linux-scripts#ipv6-enablesh): Enable your IPv6 connectivity directly in your grub boot loader.
+* [`data-backup.sh`](https://github.com/OneShotDev/simple-linux-scripts#data-backupsh): Make a reliable backup of a folder/partition of your choice.
 
 _more to come in the future_
 
@@ -46,3 +47,24 @@ It changes some lines in the configuration file `/etc/default/grub`, updates the
 
 **Additional comments:**
 Check if the activation worked by running `ifconfig | grep inet6` as ROOT. If there is output, you successfully activated cour IPv6 connectivity.
+
+
+### [`data-backup.sh`](scripts/data-backup.sh)
+_Make a reliable backup of a folder/partition of your choice._
+
+**Prerequisites:**
+* [rsync](https://packages.debian.org/stable/net/rsync) package has to be installed
+
+**Run it as:** ROOT user
+
+**How does it work:**
+Specify the directory of your data (`DATA_DIR`), your backup destination (`BACKUP_DIR`), the folder that preserves deleted files (`DEL_FILES_DIR`) and a folder for the generated log files (`LOG_FILES_DIR`) in the _SETTINGS_ part of the script.
+Run it and follow the instructions on screen.
+
+**Additional comments:**
+If you do the backup for the first time (the directory specified in `BACKUP_DIR` is empty) it is called a _full backup_.
+When doing a backup, the script checks if the number of files found in `DATA_DIR` equals the number of created files in the target `BACKUP_DIR`. (Since rsync also counts the `DATA_DIR` folder itself - which isn't copied - we subtract one from the number of origin files.)
+
+If it isn't the first time you run a backup, you almost certainly will get the warning that not all files were copied which is ok, since the script only copies new files and files that have changed since the last backup.
+
+If a file in the `DATA_DIR` was deleted since the last backup, it will be removed from `BACKUP_DIR` to maintain an exact copy. Deleted files however will be stored in the directory specified by `DEL_FILES_DIR`. Make sure to clean up this directory from time to time to save disk space.
