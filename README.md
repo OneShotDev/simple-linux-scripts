@@ -2,7 +2,7 @@
 
 `simple-linux-scripts` is a collection of little, helpful bash scripts for (debian based) linux distributions.
 You can find them in the [scripts](scripts) sub folder.
-The scripts are tested on a Debian 9.4 'stretch' system with a 4.9.0 kernel.
+The scripts are tested on a Debian 10 'buster' system with a 4.19 kernel.
 
 **NOTE:** You can determine your kernel version with the console command `uname -r` and your system version with `lsb_release -a`!
 
